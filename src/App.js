@@ -17,6 +17,8 @@ function App() {
   const [voidName, setVoidName] = useState(false);
   const [voidResults, setVoidResults] = useState(false);
 
+  const [lockedLoading, setLockedLoading] = useState(false);
+
   const name = useRef('');
 
   const voidNameFilled = () => {
@@ -25,6 +27,8 @@ function App() {
       setVoidName(true);
       setError(true);
       setLoading(false);
+
+      setLockedLoading(false);
 
   };
 
@@ -56,6 +60,8 @@ function App() {
             setError(true);
             setVoidResults(true);
             setVoidName(false);
+
+            setLockedLoading(true);
             
           } else {
 
@@ -76,6 +82,8 @@ function App() {
             setError(true);
             setVoidResults(true);
             setVoidName(false);
+
+            setLockedLoading(true);
             
           } else {
 
@@ -96,6 +104,8 @@ function App() {
             setError(true);
             setVoidResults(true);
             setVoidName(false);
+
+            setLockedLoading(true);
 
           } else {
 
@@ -171,7 +181,7 @@ function App() {
         <button type="button" className="w-1/4 m-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={() => findResults(name.current.value)}>Submit</button>
         <section className="flex flex-wrap justify-center my-20 w-full">
 
-          {(loading && !error && !voidName && !voidResults) && <Loading />}
+          {(!lockedLoading && loading && !error && !voidName && !voidResults) && <Loading />}
 
           {(!loading && error && voidName && !voidResults && (name.current.value === '')) && <Error text="Name is void. Please, type in your name" />}
           {(!loading && error && !voidName && voidResults) && <Error text="There's no hits for this name. Let's try another one! 🥪" />}
