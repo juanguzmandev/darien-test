@@ -1,25 +1,43 @@
-import React, {useState, useEffect, useRef} from 'react';
-import Header from './Header/';
-import Loading from './Loading/';
-import Results from './Results/';
-import Error from './Error/';
-import Footer from './Footer/';
+import React, {useState, useRef} from 'react';
+
+import Header from './Header/'; // Header component - This component holds the app title
+import Loading from './Loading/'; // Loading component - This component is used as a loading skeleton
+import Results from './Results/'; // Results component - This component receives and display the API data
+import Error from './Error/'; // Error component - This component is used to manage and display error states
+import Footer from './Footer/'; // Footer component - This component holds my name and the API docs references
 
 
 function App() {
 
+  // API Data States
+
   const [nations, setNations] = useState();
   const [age, setAge] = useState();
   const [gender, setGender] = useState();
+
+  // Application States
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [voidName, setVoidName] = useState(false);
   const [voidResults, setVoidResults] = useState(false);
 
+  // State for lock the loading
+
   const [lockedLoading, setLockedLoading] = useState(false);
 
+  // useRef hook to link the input of the text field
+
   const name = useRef('');
+
+  /*
+    
+    voidNameFilled - This function is triggered when a change occurs
+    on the input field. This function just clean the <Results />
+    component and any other error or loading component to clean the
+    screen. This function doesn't need any parameter
+
+  */
 
   const voidNameFilled = () => {
 
@@ -31,6 +49,16 @@ function App() {
       setLockedLoading(false);
 
   };
+
+  /*
+
+    lookForResults - This function is triggered from the findResults 
+    function. lookForResults makes the requests and check for error
+    states. This function just need the 'endpoint' object (JSON object
+    with the endpoint information) as a parameter and returns the 
+    age, nationalities and genre information
+
+  */
 
   const lookForResults = endpoint => {
     fetch(endpoint.url)
@@ -118,6 +146,10 @@ function App() {
           }
 
           break;
+
+        default:
+
+          break;
       }
 
       setLoading(false);
@@ -126,9 +158,18 @@ function App() {
 
   };
 
-  const findResults = name => {
+  /*
 
-    if (name != '') {
+    findResults - This function triggers when button is clicked. This arrow function
+    checks firstly if there's something typed on the text input field and then iterates
+    trough an array of API endpoints to fetch the needed data. This function need the
+    user's name as a parameter
+
+  */
+
+  const findResults = name => { 
+
+    if (name !== '') {
 
       setVoidName(false);
       setError(false);

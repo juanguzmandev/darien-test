@@ -1,3 +1,5 @@
-const Error = ({text}) => <h1 className="text-red-600 font-bold">{text}</h1>;
+import React from 'react';
+
+const Error = ({text}) => <h2 className="font-bold mx-8 text-center text-red-600">{text}</h2>;
 
 export default Error;
