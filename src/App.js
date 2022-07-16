@@ -33,7 +33,7 @@ function App() {
   // useEffect hook to display a message when site loads
 
   useEffect(() => {
-    alert("Hola");
+    alert("Your Possible ID is a tiny and fun app to create your approximated gender, age and nationality based on your name. Have fun!");
   });
 
   /*
