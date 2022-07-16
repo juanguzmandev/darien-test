@@ -34,7 +34,7 @@ function App() {
 
   useEffect(() => {
     alert("Your Possible ID is a tiny and fun app to show your approximated gender, age and nationality based on your name. Have fun!");
-  });
+  }, []);
 
   /*
     
