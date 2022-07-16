@@ -224,8 +224,8 @@ function App() {
         </header>
       </Header>
       <section className="flex flex-col items-center justify-center my-4">
-        <input type="text" ref={name} name="name" placeholder="Name" className="w-1/4 flex justify-center m-10 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={voidNameFilled}></input>
-        <button type="button" className="w-1/4 m-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={() => findResults(name.current.value)}>Submit</button>
+        <input type="text" ref={name} name="name" placeholder="Name" className="w-2/4 lg:w-1/4 flex justify-center m-10 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={voidNameFilled}></input>
+        <button type="button" className="w-2/4 lg:w-1/4 m-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={() => findResults(name.current.value)}>Submit</button>
         <section className="flex flex-wrap justify-center my-20 w-full">
 
           {(!lockedLoading && loading && !error && !voidName && !voidResults) && <Loading />}
