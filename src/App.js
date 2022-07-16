@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
 import Header from './Header/'; // Header component - This component holds the app title
 import Loading from './Loading/'; // Loading component - This component is used as a loading skeleton
@@ -29,6 +29,12 @@ function App() {
   // useRef hook to link the input of the text field
 
   const name = useRef('');
+
+  // useEffect hook to display a message when site loads
+
+  useEffect(() => {
+    alert("Hola");
+  });
 
   /*
     
