@@ -1,3 +1,3 @@
-const Header = ({children}) => children;
+const Header = (props) => props.children;
 
 export default Header;
