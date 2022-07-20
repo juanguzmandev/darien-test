@@ -241,24 +241,24 @@ function App() {
 					className="bg-white fixed flex flex-col items-center justify-center m-0 shadow-2xl w-full"
 					style={{ bottom: "0" }}
 				>
-					<span className="my-4 mx-2">
+					<span className="my-4">
 						<a
 							href="https://nationalize.io/"
-							className="text-blue-300 hover:text-blue-500"
+							className="text-blue-300 hover:text-blue-500 mx-2"
 						>
 							nationalize.io
 						</a>
 						|
 						<a
 							href="https://genderize.io/"
-							className="text-blue-300 hover:text-blue-500"
+							className="text-blue-300 hover:text-blue-500 mx-2"
 						>
 							genderize.io
 						</a>
 						|
 						<a
 							href="https://agify.io/"
-							className="text-blue-300 hover:text-blue-500"
+							className="text-blue-300 hover:text-blue-500 mx-2"
 						>
 							agify.io
 						</a>
