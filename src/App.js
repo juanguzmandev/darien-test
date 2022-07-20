@@ -241,7 +241,7 @@ function App() {
 					className="bg-white fixed flex flex-col items-center justify-center m-0 shadow-2xl w-full"
 					style={{ bottom: "0" }}
 				>
-					<span className="my-4">
+					<span className="my-4 mx-2">
 						<a
 							href="https://nationalize.io/"
 							className="text-blue-300 hover:text-blue-500"
